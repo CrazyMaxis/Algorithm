@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <RadialGradientBrush x:Key="BackgroundCatalog" GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+        <GradientStop Offset="0" Color="#D0393C46"/>
+        <GradientStop Offset="1" Color="#FF393C46"/>
+    </RadialGradientBrush>
+
+    <Style x:Key="GradientCatalog" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource BackgroundCatalog}"/>
+    </Style>
+
+    <Style x:Key="CatalogImage" TargetType="Image">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Height" Value="150"/>
+    </Style>
+
+    <Style x:Key="CatalogHeaders" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+</ResourceDictionary>
