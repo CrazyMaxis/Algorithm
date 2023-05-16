@@ -11,35 +11,101 @@
 
     <Grid Style="{DynamicResource GradientProfile}">
 
-        <StackPanel Orientation="Horizontal"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Margin="0 0 450 450">
+        <StackPanel>
 
-            <Image Source="{Binding User.IMAGE_SOURCE}"
-                   Width="200"
-                   Height="200"/>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0 100 550 30">
 
-            <TextBlock Text="{Binding User.LOGIN}"
-                       Foreground="White"
-                       FontFamily="Roboto"
-                       FontSize="52"
-                       FontWeight="Bold"
-                       Height="55"
-                       Margin="30 0 0 0"/>
+                <Image Source="{Binding User.IMAGE_SOURCE}"
+                       Width="225"
+                       Height="225"/>
+
+                <TextBlock Text="{Binding User.LOGIN}"
+                           Foreground="White"
+                           FontFamily="Roboto"
+                           FontSize="52"
+                           FontWeight="Bold"
+                           Height="55"
+                           Margin="30 0 0 0"/>
+
+            </StackPanel>
+
+            <Button Content="Изменить изображение"
+                    Width="300"
+                    Height="60"
+                    FontSize="22"
+                    Margin="0 0 540 0"
+                    Style="{DynamicResource LetsGoButton}"
+                    Template="{DynamicResource btTemplate}"
+                    Command="{Binding ChangeImage}"/>
+            
+        </StackPanel>
+
+        <Border Margin="300 0 0 120"
+                Height="400"
+                Width="1"
+                Style="{DynamicResource Line}"/>
+
+        <StackPanel Height="450"
+                    Width="400"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 100 0">
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 25 0 0">
+
+                <TextBlock Text="Level: "
+                           FontSize="30"
+                           FontWeight="Bold"
+                           FontFamily="Roboto"
+                           Foreground="White"/>
+
+                <TextBlock Text="{Binding User.LEVEL}"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           FontFamily="Roboto"
+                           Foreground="White"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 75 0 0">
+
+                <TextBlock Text="Алгоритмов пройдено: "
+                           FontSize="30"
+                           FontWeight="Bold"
+                           FontFamily="Roboto"
+                           Foreground="White"/>
+
+                <TextBlock Text="{Binding User.LEVEL}"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           FontFamily="Roboto"
+                           Foreground="White"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 75 0 0">
+
+                <TextBlock Text="Курсов куплено: "
+                           FontSize="30"
+                           FontWeight="Bold"
+                           FontFamily="Roboto"
+                           Foreground="White"/>
+
+                <TextBlock Text="{Binding User.LEVEL}"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           FontFamily="Roboto"
+                           Foreground="White"/>
+
+            </StackPanel>
 
         </StackPanel>
 
-        <Button Content="Изменить изображение"
-                Width="300"
-                Height="60"
-                Command="{Binding ChangeImage}"/>
-
-        <Border Margin="0 0 0 0"
-                Height="350"
-                Width="1"
-                Style="{DynamicResource Line}"/>
-        
     </Grid>
     
 </Page>

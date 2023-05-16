@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Algorithm.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230514162856_Initial")]
+    [Migration("20230515134030_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -177,6 +177,25 @@ namespace Algorithm.Migrations
                     b.HasKey("ID_USER_ACTIVITY");
 
                     b.ToTable("USER_ACTIVITIES");
+                });
+
+            modelBuilder.Entity("Algorithm.Model.User_Courses", b =>
+                {
+                    b.Property<int>("ID_USER_COURSE")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_USER_COURSE"));
+
+                    b.Property<int>("ID_COURSE")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ID_USER")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID_USER_COURSE");
+
+                    b.ToTable("USER_COURSES");
                 });
 #pragma warning restore 612, 618
         }

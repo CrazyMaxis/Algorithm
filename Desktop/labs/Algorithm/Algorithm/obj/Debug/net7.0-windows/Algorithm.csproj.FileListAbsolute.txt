@@ -84,3 +84,5 @@ C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\For
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\FormLoginRegister.baml
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\Courses.g.cs
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\Courses.baml
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\FormBuy.g.cs
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\FormBuy.baml

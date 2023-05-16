@@ -15,6 +15,7 @@ namespace Algorithm.Model.Data
         public DbSet<User_Activity> USER_ACTIVITIES { get; set; }
         public DbSet<User_Achievements> USER_ACHIEVEMENTS { get; set; }
         public DbSet<Courses> COURSES { get; set; }
+        public DbSet<User_Courses> USER_COURSES { get; set; }
         public ApplicationContext() 
         { 
 

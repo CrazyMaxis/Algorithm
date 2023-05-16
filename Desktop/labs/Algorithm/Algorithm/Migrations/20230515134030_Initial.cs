@@ -88,6 +88,20 @@ namespace Algorithm.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "USER_COURSES",
+                columns: table => new
+                {
+                    ID_USER_COURSE = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ID_USER = table.Column<int>(type: "int", nullable: false),
+                    ID_COURSE = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_USER_COURSES", x => x.ID_USER_COURSE);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "USERS",
                 columns: table => new
                 {
@@ -122,6 +136,9 @@ namespace Algorithm.Migrations
 
             migrationBuilder.DropTable(
                 name: "USER_ACTIVITIES");
+
+            migrationBuilder.DropTable(
+                name: "USER_COURSES");
 
             migrationBuilder.DropTable(
                 name: "USERS");

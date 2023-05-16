@@ -175,6 +175,25 @@ namespace Algorithm.Migrations
 
                     b.ToTable("USER_ACTIVITIES");
                 });
+
+            modelBuilder.Entity("Algorithm.Model.User_Courses", b =>
+                {
+                    b.Property<int>("ID_USER_COURSE")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_USER_COURSE"));
+
+                    b.Property<int>("ID_COURSE")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ID_USER")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID_USER_COURSE");
+
+                    b.ToTable("USER_COURSES");
+                });
 #pragma warning restore 612, 618
         }
     }

@@ -13,6 +13,9 @@
     <Compile Update="View\Courses.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\FormBuy.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Courses.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\FormBuy.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Home.xaml">
