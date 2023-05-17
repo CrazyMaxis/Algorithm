@@ -17,9 +17,6 @@ using Algorithm.ViewModel;
 
 namespace Algorithm.View
 {
-    /// <summary>
-    /// Логика взаимодействия для Login.xaml
-    /// </summary>
     public partial class Login : Page
     {
         public FormLoginRegister mainW;

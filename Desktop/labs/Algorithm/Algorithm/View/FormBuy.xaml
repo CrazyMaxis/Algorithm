@@ -1,4 +1,5 @@
 ﻿<Window x:Class="Algorithm.View.FormBuy"
+        x:Name="BuyForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,12 +8,112 @@
         mc:Ignorable="d"
         Title="" 
         Height="700" 
-        Width="1040">
+        Width="800">
     
     <Grid>
-        
-        
-        
+
+        <StackPanel x:Name="LoginPanel">
+
+            <TextBlock Text="Форма покупки"
+                       Margin="0 50 0 0"
+                       Style="{DynamicResource TextBlockRegister}"/>
+
+            <Border Margin="0 30 0 0"
+                    Style="{DynamicResource BorderForTextBox}">
+                <Grid>
+                    <TextBox x:Name="CardNumber"
+                             Style="{DynamicResource TextBoxRegister}"
+                             TextChanged="CardNumber_TextChanged"/>
+                    <TextBlock x:Name="CardNumberPlug"
+                               Text="Номер карточки"
+                               Style="{DynamicResource TextBlockPlug}"/>
+                </Grid>
+            </Border>
+
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 30 0 0"
+                        Width="445">
+
+                <Border Style="{DynamicResource BorderForTextBox}"
+                        Width="70">
+                    <Grid>
+                        <TextBox x:Name="MonthCard"
+                                 Style="{DynamicResource TextBoxRegister}"
+                                 TextChanged="MonthCard_TextChanged"/>
+                        <TextBlock x:Name="MonthCardPlug"
+                                   Text="MM"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Padding="0"
+                                   Style="{DynamicResource TextBlockPlug}"/>
+                    </Grid>
+                </Border>
+                
+                <TextBlock Text="/"
+                           Margin="5 0 5 0"
+                           Width="25"
+                           FontSize="64"
+                           FontWeight="Regular"
+                           FontFamily="Roboto"/>
+
+                <Border Style="{DynamicResource BorderForTextBox}"
+                        Width="70">
+                    <Grid>
+                        <TextBox x:Name="YearCard"
+                                 Style="{DynamicResource TextBoxRegister}"
+                                 TextChanged="YearCard_TextChanged"/>
+                        <TextBlock x:Name="YearCardPlug"
+                                   Text="YY"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Padding="0"
+                                   Style="{DynamicResource TextBlockPlug}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{DynamicResource BorderForTextBox}"
+                        Width="100"
+                        Margin="170 0 0 0">
+                    <Grid>
+                        <TextBox x:Name="CVVCard"
+                                 Style="{DynamicResource TextBoxRegister}"
+                                 TextChanged="CVVCard_TextChanged"/>
+                        <TextBlock x:Name="CVVCardPlug"
+                                   Text="CVV"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Padding="0"
+                                   Style="{DynamicResource TextBlockPlug}"/>
+                    </Grid>
+                </Border>
+
+            </StackPanel>
+
+            <Border Margin="0 30 0 0"
+                    Style="{DynamicResource BorderForTextBox}">
+                <Grid>
+                    <TextBox x:Name="NameCard"
+                             Style="{DynamicResource TextBoxRegister}"
+                             TextChanged="NameCard_TextChanged"/>
+                    <TextBlock x:Name="NameCardPlug"
+                               Text="Имя держателя"
+                               Style="{DynamicResource TextBlockPlug}"/>
+                </Grid>
+            </Border>
+
+            <Border Margin="0 30 0 0"
+                    Style="{DynamicResource Line}"/>
+
+            <Button Content="Купить"
+                    Margin="0 30 0 0"
+                    Style="{DynamicResource ButtonRegister}"
+                    Template="{DynamicResource btTemplate}"
+                    Command="{Binding DataContext.ClickBuy, RelativeSource={RelativeSource AncestorType=Window}}"
+                    CommandParameter="{Binding ElementName=BuyForm}"/>
+
+        </StackPanel>
+
     </Grid>
     
 </Window>

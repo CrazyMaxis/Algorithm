@@ -1,4 +1,5 @@
-﻿using Algorithm.ViewModel;
+﻿using Algorithm.Model;
+using Algorithm.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,50 @@ using System.Windows.Shapes;
 
 namespace Algorithm.View
 {
-    /// <summary>
-    /// Логика взаимодействия для Courses.xaml
-    /// </summary>
     public partial class Courses : Page
     {
         public Courses()
         {
             InitializeComponent();
             this.DataContext = new DataManageCourses();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                Algorithm.Model.Courses course;
+                Button button = (Button)sender;
+                DependencyObject parent = VisualTreeHelper.GetParent(button);
+
+                // Ищем родительский элемент, пока не достигнем нужного типа или не достигнем корневого элемента
+                while (parent != null && !(parent is ListBoxItem))
+                {
+                    parent = VisualTreeHelper.GetParent(parent);
+                }
+
+                if (parent is ListViewItem listItem)
+                {
+                    course = (Algorithm.Model.Courses)listItem.DataContext;
+                    FormBuy form = new FormBuy(course.ID_COURSE);
+                    if (DataWorker.CheckUserCourses(AppSettings.localUser.ID_USER, course.ID_COURSE))
+                    {
+                        throw new Exception("У вас уже куплен данный курс!");
+                    }
+                    form.Show();
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Purchace Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

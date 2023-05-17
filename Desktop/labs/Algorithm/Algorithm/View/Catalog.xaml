@@ -70,7 +70,13 @@
 
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="black"/>
+                            <Setter Property="BorderBrush" Value="#99A7B1"/>
+                            <Setter Property="BorderThickness" Value="4"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="50" Color="#99A7B1" ShadowDepth="15"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -95,11 +101,24 @@
 
                     <WrapPanel>
 
-                        <Image Width="150"
+                        <StackPanel Width="200">
+
+                            <Image Width="150"
                                Height="130"
-                               Margin="3"
+                               Margin="0"
                                Stretch="Fill"
                                Source="{Binding IMAGE_SOURCE}"/>
+
+                        <TextBlock Margin="0 5 0 0"
+                                   TextWrapping="Wrap"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="Roboto"
+                                   FontWeight="Medium"
+                                   FontSize="12"
+                                   Foreground="White" 
+                                   Text="{Binding NAME}"/>
+
+                        </StackPanel>
 
                     </WrapPanel>
 

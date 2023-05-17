@@ -22,6 +22,7 @@ namespace Algorithm.View
         Catalog catalog = new Catalog();
         Profile profile = new Profile();
         Courses courses = new Courses();
+        Tests tests = new Tests();
         public Main()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace Algorithm.View
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //Process.Start("https://github.com/CrazyMaxis");
+            Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome", "https://metanit.com");
         }
 
         private void Catalog_MouseDown(object sender, MouseButtonEventArgs e)
@@ -65,12 +66,18 @@ namespace Algorithm.View
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
+            profile.context.Refresh();
             MainFrame.Navigate(profile);
         }
 
         private void Courses_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainFrame.Navigate(courses);
+        }
+
+        private void Tests_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(tests);
         }
     }
 }

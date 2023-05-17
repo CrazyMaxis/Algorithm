@@ -13,6 +13,5 @@ namespace Algorithm.Model
         public int ID_USER_ACTIVITY { get; set; }
         public int ID_USER { get; set; } 
         public int ID_ALGORITHM { get; set; } 
-        public DateTime ACTIVITY_DATE { get; set; } 
     }
 }

@@ -23,22 +23,16 @@ namespace Algorithm.View
 {
     public partial class Catalog : Page
     {
+        DataManageCatalog context = new DataManageCatalog();
         public Catalog()
         {
             InitializeComponent();
-            this.DataContext = new DataManageCatalog();
+            this.DataContext = context;
         }
 
         private void ListViewItem_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Algorithm.Model.Algorithm algorithm = this.Level0.SelectedItem as Algorithm.Model.Algorithm;
-            FolderBrowserDialog folder = new FolderBrowserDialog();
-            if (folder.ShowDialog() == DialogResult.OK)
-            {
-                string path = folder.SelectedPath + "\\";
-                string fullpath = Path.Combine(path, Path.GetFileName(algorithm.PATH_TO_PRESENTATION));
-                File.Copy(algorithm.PATH_TO_PRESENTATION, fullpath, true);
-            }
+            context.ClickAlgorithmLevel0.Execute(this);
         }
     }
 }

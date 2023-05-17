@@ -31,10 +31,6 @@ namespace Algorithm.View
             if (LoginForRegister.Text.Length > 0)
             {
                 LoginForRegisterPlug.Visibility = Visibility.Hidden;
-                if (!Regex.IsMatch((sender as TextBox).Text, "^[a-zA-Z]{5,}\\d*$"))
-                {
-                    MessageBox.Show("ОШИБКА");
-                }
             }
             else
             {

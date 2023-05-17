@@ -21,10 +21,23 @@ namespace Algorithm.View
     /// </summary>
     public partial class Profile : Page
     {
+        public DataManageProfile context = new DataManageProfile();
         public Profile()
         {
             InitializeComponent();
-            this.DataContext = new DataManageProfile();
+            this.DataContext = context;
+        }
+
+        private void Question_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Question.Text.Length > 0)
+            {
+                QuestionPlug.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                QuestionPlug.Visibility = Visibility.Visible;
+            }
         }
     }
 }

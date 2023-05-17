@@ -39,10 +39,11 @@
                        Style="{DynamicResource HeaderLink}"
                        MouseDown="Catalog_MouseDown"/>
 
-            <TextBlock x:Name="Achiemenets"
-                       Text="Достижения"
+            <TextBlock x:Name="Tests"
+                       Text="Тесты"
                        Margin="50 0 0 0"
-                       Style="{DynamicResource HeaderLink}"/>
+                       Style="{DynamicResource HeaderLink}"
+                       MouseDown="Tests_MouseDown"/>
 
             <TextBlock x:Name="Courses"
                        Text="Курсы"
@@ -52,7 +53,7 @@
 
             <StackPanel x:Name="ProfileButtons"
                         Visibility="Hidden"
-                        Margin="670 0 0 0">
+                        Margin="730 0 0 0">
                 
                 <Button x:Name="ProfileButton"
                         Content="Profile"

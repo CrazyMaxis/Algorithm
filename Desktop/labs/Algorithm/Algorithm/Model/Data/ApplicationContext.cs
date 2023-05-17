@@ -11,11 +11,13 @@ namespace Algorithm.Model.Data
     {
         public DbSet<User> USERS { get; set; }
         public DbSet<Algorithm> ALGORITHMS { get; set; }
-        public DbSet<Achievement> ACHIEVEMENTS { get; set; }
-        public DbSet<User_Activity> USER_ACTIVITIES { get; set; }
-        public DbSet<User_Achievements> USER_ACHIEVEMENTS { get; set; }
+        public DbSet<User_Activity> USER_ACTIVITY { get; set; }
         public DbSet<Courses> COURSES { get; set; }
         public DbSet<User_Courses> USER_COURSES { get; set; }
+        public DbSet<Question> QUESTIONS { get; set; }
+        public DbSet<Test> TESTS { get; set; }
+        public DbSet<User_Test> USER_TESTS { get; set; }
+
         public ApplicationContext() 
         { 
 
