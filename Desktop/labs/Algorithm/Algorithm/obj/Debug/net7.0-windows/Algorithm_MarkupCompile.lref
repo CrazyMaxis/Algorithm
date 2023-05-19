@@ -1,13 +1,23 @@
 ﻿
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\App.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\CatalogAdmin.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\ChangeAlgorithm.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\MainAdmin.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Catalog.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Courses.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\FormBuy.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\FormLoginRegister.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Home.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Login.xaml;;
-FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Main.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\MainUser.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Profile.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Register.xaml;;
 FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\Tests.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\AddAlgorithm.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\TestsAdmin.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\ChangeTest.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\AddTest.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\AddCourse.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\ChangeCourse.xaml;;
+FC:\Users\USER\Desktop\labs\Algorithm\Algorithm\View\admin\CoursesAdmin.xaml;;
 

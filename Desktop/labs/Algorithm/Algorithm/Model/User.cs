@@ -16,5 +16,6 @@ namespace Algorithm.Model
         public string PASSWORD { get; set; }
         public int LEVEL { get; set; }
         public string IMAGE_SOURCE { get; set; }
+        public string ROLE { get; set; }
     }
 }

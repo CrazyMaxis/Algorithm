@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Algorithm.Model;
 using Algorithm.View;
 using Microsoft.Identity.Client;
@@ -55,6 +56,7 @@ namespace Algorithm.ViewModel
                     {
                         DataWorker.AddQuestion(AppSettings.localUser.ID_USER, page.Question.Text);
                         page.Question.Text = "";
+                        MessageBox.Show("Ожидайте, вам скоро ответят на почту.", "Вопрос", MessageBoxButton.OK);
                     }
                 });
             }

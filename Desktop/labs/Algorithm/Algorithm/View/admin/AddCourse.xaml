@@ -1,0 +1,89 @@
+﻿<Window x:Class="Algorithm.View.admin.AddCourse"
+        x:Name="FormAddCourse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Algorithm.View.admin"
+        mc:Ignorable="d"
+        Title="AddCourse"
+        Height="800"
+        Width="800">
+
+    <Grid>
+
+        <StackPanel>
+
+            <TextBlock Text="Добавление элемента"
+                       Margin="0 30 0 0"
+                       Style="{DynamicResource TextBlockRegister}"/>
+
+            <Border Margin="0 30 0 0"
+                    Style="{DynamicResource BorderForTextBox}">
+                <Grid>
+                    <TextBox x:Name="ElementName"
+                             Style="{DynamicResource TextBoxRegister}"
+                             TextChanged="ElementName_TextChanged"/>
+                    <TextBlock x:Name="ElementNamePlug"
+                               Text="Название курса"
+                               Style="{DynamicResource TextBlockPlug}"/>
+                </Grid>
+            </Border>
+
+            <Border Margin="0 30 0 0"
+                    Width="100"
+                    Style="{DynamicResource BorderForTextBox}">
+                <Grid>
+                    <TextBox x:Name="ElementPrice"
+                             Style="{DynamicResource TextBoxRegister}"
+                             TextChanged="ElementPrice_TextChanged"/>
+                    <TextBlock x:Name="ElementPricePlug"
+                               Padding="0"
+                               TextAlignment="Center"
+                               Text="Цена"
+                               Style="{DynamicResource TextBlockPlug}"/>
+                </Grid>
+            </Border>
+
+            <Image x:Name="ElementImage"
+                   Margin="0 30 0 0"
+                   Width="180"
+                   Height="130"/>
+
+            <Button Content="Изменить изображение"
+                    Width="300"
+                    Height="60"
+                    FontSize="18"
+                    Margin="0 30 0 0"
+                    Style="{DynamicResource LetsGoButton}"
+                    Template="{DynamicResource btTemplate}"
+                    Command="{Binding ChangeImage}"
+                    CommandParameter="{Binding ElementName=ElementImage}"/>
+
+            <Border Margin="0 30 0 0"
+                    Style="{DynamicResource BorderForTextBox}">
+                <Grid>
+                    <TextBox x:Name="ElementDescription"
+                             Style="{DynamicResource TextBoxRegister}"
+                             TextChanged="ElementDescription_TextChanged"/>
+                    <TextBlock x:Name="ElementDescriptionPlug"
+                               Text="Описание"
+                               Style="{DynamicResource TextBlockPlug}"/>
+                </Grid>
+            </Border>
+
+            <Button Content="Добавить"
+                    Width="300"
+                    Height="60"
+                    FontSize="18"
+                    Margin="0 30 0 0"
+                    Style="{DynamicResource LetsGoButton}"
+                    Template="{DynamicResource btTemplate}"
+                    Command="{Binding AddElement}"
+                    CommandParameter="{Binding ElementName=FormAddCourse}"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>

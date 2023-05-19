@@ -30,7 +30,7 @@
                   BorderThickness="0"
                   ItemsSource="{Binding Courses}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -41,7 +41,7 @@
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="20 0 0 0"/>
+                    <Setter Property="Margin" Value="20 0 0 50"/>
 
                     <Setter Property="Template">
                         <Setter.Value>
@@ -77,8 +77,8 @@
                 <ItemsPanelTemplate>
 
                     <WrapPanel Orientation="Horizontal"
-                               HorizontalAlignment="Left"
-                               Height="{Binding ActualHeight, ElementName=CoursesList}"
+                               HorizontalAlignment="Left"                               
+                               Height="Auto"
                                Width="{Binding ActualWidth, ElementName=CoursesList}"/>
 
                 </ItemsPanelTemplate>
@@ -89,9 +89,10 @@
 
                 <DataTemplate>
 
-                    <WrapPanel>
+                    
 
                         <StackPanel Width="700"
+                                    
                                     Orientation="Horizontal">
 
                             <StackPanel Orientation="Vertical">
@@ -165,7 +166,7 @@
 
                         </StackPanel>
 
-                    </WrapPanel>
+                    
 
                 </DataTemplate>
 

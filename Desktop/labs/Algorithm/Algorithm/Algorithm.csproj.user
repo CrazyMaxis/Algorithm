@@ -7,6 +7,36 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\admin\AddAlgorithm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\AddCourse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\AddTest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\CatalogAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\ChangeAlgorithm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\ChangeCourse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\ChangeTest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\CoursesAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\MainAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\TestsAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Catalog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,7 +58,7 @@
     <Compile Update="View\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Main.xaml.cs">
+    <Compile Update="View\MainUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Tests.xaml.cs">
@@ -52,6 +82,36 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\RegisterLoginStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\AddAlgorithm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\AddCourse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\AddTest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\CatalogAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\ChangeAlgorithm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\ChangeCourse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\ChangeTest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\CoursesAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\MainAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\TestsAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Catalog.xaml">
@@ -78,7 +138,7 @@
     <Page Update="View\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Main.xaml">
+    <Page Update="View\MainUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Tests.xaml">

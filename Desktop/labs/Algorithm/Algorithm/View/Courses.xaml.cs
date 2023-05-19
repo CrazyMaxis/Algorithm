@@ -3,6 +3,8 @@ using Algorithm.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -56,11 +58,6 @@ namespace Algorithm.View
             {
                 MessageBox.Show(ex.Message, "Purchace Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            
         }
     }
 }

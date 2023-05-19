@@ -4,7 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using Algorithm.Model.Data;
+using Algorithm.View;
+using Microsoft.VisualBasic.Logging;
 
 namespace Algorithm.Model
 {
@@ -16,19 +19,36 @@ namespace Algorithm.Model
             {
                 if (!db.USERS.Any(el => el.LOGIN == login))
                 {
-                    User newUser = new User { LOGIN = login, EMAIL = email, PASSWORD = password, LEVEL = 0 };
+                    User newUser = new User { LOGIN = login, EMAIL = email, PASSWORD = password, LEVEL = 0, IMAGE_SOURCE = "C:\\Users\\USER\\Desktop\\labs\\Algorithm\\Img\\UserLogo.png", ROLE = "user" };
                     db.USERS.Add(newUser);
                     db.SaveChanges();
                 }
             }
         }
 
-        public static bool CheckUser(string login, string password)
+        public static bool CheckUserLogin(string login)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                AppSettings.localUser = db.USERS.FirstOrDefault(el => el.LOGIN == login && el.PASSWORD == password);
+                AppSettings._possibleLogin = login;
+                return db.USERS.FirstOrDefault(el => el.LOGIN == login) == null ? false : true;
+            }
+        }
+
+        public static bool CheckUserPassword(string password)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                AppSettings.localUser = db.USERS.FirstOrDefault(el => el.LOGIN == AppSettings._possibleLogin && el.PASSWORD == password);
                 return AppSettings.localUser == null ? false : true;
+            }
+        }
+
+        public static bool CheckUserEmail(string email)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return db.USERS.FirstOrDefault(el => el.EMAIL == email) == null ? false : true;
             }
         }
 
@@ -153,6 +173,103 @@ namespace Algorithm.Model
                 db.SaveChanges();
             }
             
+        }
+
+        public static void ChangeAlgorithm(Algorithm element)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Algorithm algorithm = db.ALGORITHMS.First(el => el.ID_ALGORITHM == element.ID_ALGORITHM);
+                algorithm.NAME = element.NAME;
+                algorithm.LEVEL = element.LEVEL;
+                algorithm.IMAGE_SOURCE = element.IMAGE_SOURCE;
+                algorithm.PATH_TO_PRESENTATION = element.PATH_TO_PRESENTATION;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteAlgorithm(int algorithm_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Algorithm algorithm = db.ALGORITHMS.First(el => el.ID_ALGORITHM == algorithm_id);
+                db.ALGORITHMS.Remove(algorithm);
+                db.SaveChanges();
+            }
+        }
+
+        public static void AddAlgorithm(Algorithm element)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                element.DESCRIPTION = "1";
+                db.ALGORITHMS.Add(element);
+                db.SaveChanges();
+            }
+        }
+
+        public static void ChangeTest(Test element)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Test test= db.TESTS.First(el => el.ID_TEST == element.ID_TEST);
+                test.NAME = element.NAME;
+                test.LEVEL = element.LEVEL;
+                test.IMAGE_SOURCE = element.IMAGE_SOURCE;
+                test.SOURCE = element.SOURCE;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteTest(int test_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Test test = db.TESTS.First(el => el.ID_TEST == test_id);
+                db.TESTS.Remove(test);
+                db.SaveChanges();
+            }
+        }
+
+        public static void AddTest(Test element)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.TESTS.Add(element);
+                db.SaveChanges();
+            }
+        }
+
+        public static void ChangeCourse(Courses element)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Courses course = db.COURSES.First(el => el.ID_COURSE == element.ID_COURSE);
+                course.NAME = element.NAME;
+                course.PRICE = element.PRICE;
+                course.IMAGE_SOURCE = element.IMAGE_SOURCE;
+                course.DESCRIPTION = element.DESCRIPTION;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteCourse(int course_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Courses course = db.COURSES.First(el => el.ID_COURSE == course_id);
+                db.COURSES.Remove(course);
+                db.SaveChanges();
+            }
+        }
+
+        public static void AddCourse(Courses element)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.COURSES.Add(element);
+                db.SaveChanges();
+            }
         }
     }
 }

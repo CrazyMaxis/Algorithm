@@ -27,12 +27,12 @@
         <ListView x:Name="TestsList"
                   Grid.Row="1"
                   Width="1220"
-                  VerticalAlignment="Bottom"
+                  VerticalAlignment="Top"
                   Background="Transparent"
                   BorderThickness="0"
                   ItemsSource="{Binding Tests}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -76,9 +76,9 @@
                 <ItemsPanelTemplate>
 
                     <WrapPanel Orientation="Horizontal"
-                               
+                               Margin="0 0 0 50"
                                HorizontalAlignment="Left"
-                               Height="{Binding ActualHeight, ElementName=TestsList}"
+                               Height="Auto"
                                Width="{Binding ActualWidth, ElementName=TestsList}"/>
 
                 </ItemsPanelTemplate>
@@ -89,7 +89,7 @@
 
                 <DataTemplate>
 
-                    <WrapPanel>
+ 
 
                         <StackPanel Width="250">
 
@@ -110,7 +110,6 @@
 
                         </StackPanel>
 
-                    </WrapPanel>
 
                 </DataTemplate>
 

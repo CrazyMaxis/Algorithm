@@ -1,5 +1,6 @@
 ﻿using Algorithm.Model;
 using Algorithm.View;
+using Algorithm.View.admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,16 @@ namespace Algorithm.ViewModel
 
                             }
 
+                            if (DataWorker.CheckUserLogin(Page.LoginForRegister.Text))
+                            {
+                                throw new Exception("Пользователь с данным логином уже существует!");
+                            }
+
+                            if (DataWorker.CheckUserEmail(Page.EmailForRegister.Text))
+                            {
+                                throw new Exception("Нельзя зарегистрировать несколько пользователей под одной почтой!");
+                            }
+
                             DataWorker.CreateUser(Page.LoginForRegister.Text, Page.EmailForRegister.Text, Page.PasswordForRegister.Password);
                             MessageBox.Show("Регистрация прошла успешно.", "Register", MessageBoxButton.OK);
                         }
@@ -67,15 +78,31 @@ namespace Algorithm.ViewModel
                         Login Page = obj as Login;
                         if (Page != null)
                         {
-                            if (DataWorker.CheckUser(Page.LoginForLogin.Text, Page.PasswordForLogin.Password))
+                            if (DataWorker.CheckUserLogin(Page.LoginForLogin.Text))
                             {
-                                Main main = new Main();
-                                main.Show();
-                                Page.mainW.Close();
+                                if (DataWorker.CheckUserPassword(Page.PasswordForLogin.Password))
+                                {
+                                    if (AppSettings.localUser.ROLE == "user")
+                                    {
+                                        MainUser main = new MainUser();
+                                        main.Show();
+                                        Page.mainW.Close();
+                                    }
+                                    else
+                                    {
+                                        MainAdmin main = new MainAdmin();
+                                        main.Show();
+                                        Page.mainW.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    throw new Exception("Пароль неверный!");
+                                }
                             }
                             else
                             {
-                                throw new Exception("Неверно указаны данные!");
+                                throw new Exception("Пользователя с таким логином не существует!");
                             }
                         }
                     }

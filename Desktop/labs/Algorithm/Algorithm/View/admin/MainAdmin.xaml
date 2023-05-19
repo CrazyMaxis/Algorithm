@@ -1,0 +1,84 @@
+﻿<Window x:Class="Algorithm.View.admin.MainAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Algorithm.View.admin"
+        mc:Ignorable="d"
+        Title="Algorithm Adventure"
+        Icon="C:\Users\USER\Desktop\labs\Algorithm\Img\Logo.png"
+        Height="974"
+        Width="1440" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Background="#22242A">
+
+            <Border Margin="30 0 0 0"
+                    Width="50"
+                    Height="50">
+                <Image x:Name="Home"
+                       Style="{DynamicResource LogoHome}"
+                       MouseDown="Home_MouseDown"/>
+            </Border>
+
+
+            <TextBlock x:Name="Catalog"
+                       Text="Каталог"
+                       Margin="100 0 0 0"
+                       Style="{DynamicResource HeaderLink}"
+                       MouseDown="Catalog_MouseDown"/>
+
+            <TextBlock x:Name="Tests"
+                       Text="Тесты"
+                       Margin="50 0 0 0"
+                       Style="{DynamicResource HeaderLink}"
+                       MouseDown="Tests_MouseDown"/>
+
+            <TextBlock x:Name="Courses"
+                       Text="Курсы"
+                       Margin="50 0 0 0"
+                       Style="{DynamicResource HeaderLink}"
+                       MouseDown="Courses_MouseDown"/>
+
+            <TextBlock x:Name="UserTests"
+                       Text="Пользователи+тесты"
+                       Margin="50 0 0 0"
+                       Style="{DynamicResource HeaderLink}"
+                       MouseDown="UserTests_MouseDown"/>
+
+            <TextBlock x:Name="Questions"
+                       Text="Вопросы"
+                       Margin="50 0 0 0"
+                       Style="{DynamicResource HeaderLink}"
+                       MouseDown="Questions_MouseDown"/>
+
+        </StackPanel>
+
+        <Frame x:Name="MainFrame"
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden"/>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Background="#DC22242A">
+
+            <TextBlock Text="© 2023 - 2023"
+                       Margin="50 0 0 0"
+                       Style="{DynamicResource FooterText}"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>

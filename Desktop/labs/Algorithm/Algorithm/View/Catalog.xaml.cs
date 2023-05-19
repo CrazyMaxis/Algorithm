@@ -30,9 +30,19 @@ namespace Algorithm.View
             this.DataContext = context;
         }
 
-        private void ListViewItem_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             context.ClickAlgorithmLevel0.Execute(this);
+        }
+
+        private void ListViewItem_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            context.ClickAlgorithmLevel1.Execute(this);
+        }
+
+        private void ListViewItem_MouseDoubleClick_2(object sender, MouseButtonEventArgs e)
+        {
+            context.ClickAlgorithmLevel2.Execute(this);
         }
     }
 }

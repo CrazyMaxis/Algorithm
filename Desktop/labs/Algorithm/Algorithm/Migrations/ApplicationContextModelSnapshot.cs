@@ -156,6 +156,10 @@ namespace Algorithm.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ROLE")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ID_USER");
 
                     b.ToTable("USERS");

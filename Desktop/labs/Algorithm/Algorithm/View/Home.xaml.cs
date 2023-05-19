@@ -16,14 +16,11 @@ using Algorithm.View;
 
 namespace Algorithm.View
 {
-    /// <summary>
-    /// Логика взаимодействия для Home.xaml
-    /// </summary>
     public partial class Home : Page
     {
-        Main mf;
+        MainUser mf;
         Catalog catalog = new Catalog();
-        public Home(Main main)
+        public Home(MainUser main)
         {
             InitializeComponent();
             mf = main;

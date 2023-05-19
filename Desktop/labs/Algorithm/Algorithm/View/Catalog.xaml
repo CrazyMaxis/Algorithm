@@ -42,13 +42,13 @@
                   Background="Transparent"
                   BorderThickness="0"
                   ItemsSource="{Binding LevelZero}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                   ScrollViewer.VerticalScrollBarVisibility="Disabled">
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
 
-                    <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDown"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
 
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -89,7 +89,7 @@
                     <WrapPanel Orientation="Horizontal"
                                HorizontalAlignment="Left"
                                Height="{Binding ActualHeight, ElementName=Level0}"
-                               Width="{Binding ActualWidth, ElementName=Level0}"/>
+                               Width="Auto"/>
 
                 </ItemsPanelTemplate>
 
@@ -99,7 +99,7 @@
 
                 <DataTemplate>
 
-                    <WrapPanel>
+
 
                         <StackPanel Width="200">
 
@@ -120,7 +120,7 @@
 
                         </StackPanel>
 
-                    </WrapPanel>
+
 
                 </DataTemplate>
 
@@ -141,10 +141,46 @@
                   Background="Transparent"
                   BorderThickness="0"
                   ItemsSource="{Binding LevelOne}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                  ItemContainerStyle="{DynamicResource Item}">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
 
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+
+                    <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick_1"/>
+
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="20 0 0 0"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border BorderThickness="0" HorizontalAlignment="Center" BorderBrush="Transparent" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                          Content="{TemplateBinding Content}" 
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#99A7B1"/>
+                            <Setter Property="BorderThickness" Value="4"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="50" Color="#99A7B1" ShadowDepth="15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            
             <ListView.ItemsPanel>
 
                 <ItemsPanelTemplate>
@@ -152,7 +188,7 @@
                     <WrapPanel Orientation="Horizontal"
                                HorizontalAlignment="Left"
                                Height="{Binding ActualHeight, ElementName=Level1}"
-                               Width="{Binding ActualWidth, ElementName=Level1}"/>
+                               Width="Auto"/>
 
                 </ItemsPanelTemplate>
 
@@ -162,15 +198,26 @@
 
                 <DataTemplate>
 
-                    <WrapPanel>
+
+                        <StackPanel Width="200">
 
                         <Image Width="150"
                                Height="130"
-                               Margin="3"
+                               Margin="0"
                                Stretch="Fill"
                                Source="{Binding IMAGE_SOURCE}"/>
 
-                    </WrapPanel>
+                        <TextBlock Margin="0 5 0 0"
+                                   TextWrapping="Wrap"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="Roboto"
+                                   FontWeight="Medium"
+                                   FontSize="12"
+                                   Foreground="White" 
+                                   Text="{Binding NAME}"/>
+
+                        </StackPanel>
+
 
                 </DataTemplate>
 
@@ -191,10 +238,46 @@
                   Background="Transparent"
                   BorderThickness="0"
                   ItemsSource="{Binding LevelTwo}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                  ItemContainerStyle="{DynamicResource Item}">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
 
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+
+                    <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick_2"/>
+
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="20 0 0 0"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border BorderThickness="0" HorizontalAlignment="Center" BorderBrush="Transparent" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                          Content="{TemplateBinding Content}" 
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#99A7B1"/>
+                            <Setter Property="BorderThickness" Value="4"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="50" Color="#99A7B1" ShadowDepth="15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            
             <ListView.ItemsPanel>
 
                 <ItemsPanelTemplate>
@@ -202,7 +285,7 @@
                     <WrapPanel Orientation="Horizontal"
                                HorizontalAlignment="Left"
                                Height="{Binding ActualHeight, ElementName=Level2}"
-                               Width="{Binding ActualWidth, ElementName=Level2}"/>
+                               Width="Auto"/>
 
                 </ItemsPanelTemplate>
 
@@ -212,15 +295,26 @@
 
                 <DataTemplate>
 
-                    <WrapPanel>
 
-                        <Image Width="150"
+                        <StackPanel Width="200">
+
+                            <Image Width="150"
                                Height="130"
-                               Margin="3"
+                               Margin="0"
                                Stretch="Fill"
                                Source="{Binding IMAGE_SOURCE}"/>
 
-                    </WrapPanel>
+                            <TextBlock Margin="0 5 0 0"
+                                   TextWrapping="Wrap"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="Roboto"
+                                   FontWeight="Medium"
+                                   FontSize="12"
+                                   Foreground="White" 
+                                   Text="{Binding NAME}"/>
+
+                        </StackPanel>
+
 
                 </DataTemplate>
 

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -59,6 +61,8 @@ namespace Algorithm.ViewModel
                             MessageBox.Show("Покупка совершена успешно!", "Purchace Done", MessageBoxButton.OK);
                             window.Close();
 
+                            var mail = AppSettings.CreateMail("Algorithm Adventure", "algorithmadventure@gmail.com", AppSettings.localUser.EMAIL, "Информация о покупке курсов", "Заскамил");
+                            AppSettings.SendMail("smtp.gmail.com", 587, "algorithmadventure@gmail.com", "mmruuaicgjivgyvq", mail);
                         }
                     }
                     catch (Exception ex)
@@ -67,7 +71,6 @@ namespace Algorithm.ViewModel
                     }
                 });
             }  
-        } 
-        
+        }
     }
 }
