@@ -61,6 +61,11 @@ namespace Algorithm.ViewModel
                     if (page != null)
                     {
                         Algorithm.Model.Algorithm algorithm = page.Level1.SelectedItem as Algorithm.Model.Algorithm;
+                        if (algorithm.LEVEL > AppSettings.localUser.LEVEL)
+                        {
+                            MessageBox.Show("Ты не достоин!", "Нельзя", MessageBoxButtons.OK);
+                            return;
+                        }
                         if (algorithm != null)
                         {
                             FolderBrowserDialog folder = new FolderBrowserDialog();
@@ -89,6 +94,11 @@ namespace Algorithm.ViewModel
                     if (page != null)
                     {
                         Algorithm.Model.Algorithm algorithm = page.Level2.SelectedItem as Algorithm.Model.Algorithm;
+                        if (algorithm.LEVEL > AppSettings.localUser.LEVEL)
+                        {
+                            MessageBox.Show("Ты не достоин!", "Нельзя", MessageBoxButtons.OK);
+                            return;
+                        }
                         if (algorithm != null)
                         {
                             FolderBrowserDialog folder = new FolderBrowserDialog();

@@ -31,16 +31,16 @@ namespace Algorithm.View
         private void LoginIn_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            if (LoginIn.Text == "REGISTER")
+            if (LoginIn.Text == "ЗАРЕГИСТРИРОВАТЬСЯ")
             {
                 FrameLoginRegister.Navigate(register);
-                LoginIn.Text = "LOGIN IN";
+                LoginIn.Text = "ВОЙТИ";
                 LoginIn.Margin = new Thickness(0, 530, 0, 0);
             }
             else
             {
                 FrameLoginRegister.Navigate(login);
-                LoginIn.Text = "REGISTER";
+                LoginIn.Text = "ЗАРЕГИСТРИРОВАТЬСЯ";
                 LoginIn.Margin = new Thickness(0, 330, 0, 0);
             }
         }

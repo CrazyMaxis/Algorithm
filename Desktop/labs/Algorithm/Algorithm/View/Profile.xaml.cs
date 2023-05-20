@@ -39,5 +39,6 @@ namespace Algorithm.View
                 QuestionPlug.Visibility = Visibility.Visible;
             }
         }
+
     }
 }

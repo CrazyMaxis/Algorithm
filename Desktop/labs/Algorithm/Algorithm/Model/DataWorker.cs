@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using Algorithm.Model.Data;
 using Algorithm.View;
@@ -32,6 +35,31 @@ namespace Algorithm.Model
             {
                 AppSettings._possibleLogin = login;
                 return db.USERS.FirstOrDefault(el => el.LOGIN == login) == null ? false : true;
+            }
+        }
+
+        public static User FindUser(int user_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return db.USERS.First(el => el.ID_USER  == user_id);
+            }
+        }
+
+        public static void UserLvlUp(int user_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                User user = db.USERS.First(el => el.ID_USER == user_id);
+                if (user.LEVEL != 2)
+                {
+                    user.LEVEL = user.LEVEL + 1;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь и так максимального уровня", "LvlUp" ,MessageBoxButton.OK);
+                }
             }
         }
 
@@ -73,6 +101,22 @@ namespace Algorithm.Model
             using (ApplicationContext db = new ApplicationContext())
             {
                 return new ObservableCollection<Test>(db.TESTS.ToList<Test>());
+            }
+        }
+
+        public static ObservableCollection<Question> GetAllQuestions()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return new ObservableCollection<Question>(db.QUESTIONS.ToList<Question>());
+            }
+        }
+
+        public static ObservableCollection<User_Test> GetAllUserTests()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return new ObservableCollection<User_Test>(db.USER_TESTS.ToList<User_Test>());
             }
         }
 
@@ -188,11 +232,21 @@ namespace Algorithm.Model
             }
         }
 
+        public static void DeleteUserActivity(int algorithm_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.USER_ACTIVITY.RemoveRange(db.USER_ACTIVITY.Where(el => el.ID_ALGORITHM == algorithm_id));
+                db.SaveChanges();
+            }
+        }
+
         public static void DeleteAlgorithm(int algorithm_id)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
                 Algorithm algorithm = db.ALGORITHMS.First(el => el.ID_ALGORITHM == algorithm_id);
+                DataWorker.DeleteUserActivity(algorithm_id);
                 db.ALGORITHMS.Remove(algorithm);
                 db.SaveChanges();
             }
@@ -221,11 +275,23 @@ namespace Algorithm.Model
             }
         }
 
+        public static void DeleteUserTest(int test_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.USER_TESTS.RemoveRange(db.USER_TESTS.Where(el => el.ID_TEST== test_id));
+                db.SaveChanges();
+            }
+        }
+
+        
+
         public static void DeleteTest(int test_id)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
                 Test test = db.TESTS.First(el => el.ID_TEST == test_id);
+                DataWorker.DeleteUserTest(test_id);
                 db.TESTS.Remove(test);
                 db.SaveChanges();
             }
@@ -253,11 +319,21 @@ namespace Algorithm.Model
             }
         }
 
+        public static void DeleteUserCourses(int course_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.USER_COURSES.RemoveRange(db.USER_COURSES.Where(el => el.ID_COURSE == course_id));
+                db.SaveChanges();
+            }
+        }
+
         public static void DeleteCourse(int course_id)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
                 Courses course = db.COURSES.First(el => el.ID_COURSE == course_id);
+                DataWorker.DeleteCourse(course_id);
                 db.COURSES.Remove(course);
                 db.SaveChanges();
             }
@@ -269,6 +345,35 @@ namespace Algorithm.Model
             {
                 db.COURSES.Add(element);
                 db.SaveChanges();
+            }
+        }
+
+        public static void DeleteQuestion(int question_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Question question = db.QUESTIONS.First(el => el.ID_QUESTION == question_id);
+                db.QUESTIONS.Remove(question);
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteUserTestAdmin(int usertest_id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                User_Test user_Test = db.USER_TESTS.First(el => el.ID_USER_TEST == usertest_id);
+                db.USER_TESTS.Remove(user_Test);
+                db.SaveChanges();
+            }
+        }
+
+        public static string GetTestSource(int test_id)
+        {
+            using (ApplicationContext db = new ApplicationContext ())
+            {
+                Test test = db.TESTS.First(el => el.ID_TEST == test_id);
+                return test.SOURCE;
             }
         }
     }

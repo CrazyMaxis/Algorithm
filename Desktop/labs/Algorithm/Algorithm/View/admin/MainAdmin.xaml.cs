@@ -19,6 +19,8 @@ namespace Algorithm.View.admin
         CatalogAdmin catalog = new CatalogAdmin();
         TestsAdmin testAdmin = new TestsAdmin();
         CoursesAdmin courseAdmin = new CoursesAdmin();
+        QuestionsAdmin QuestionsAdmin = new QuestionsAdmin();
+        UsersAndTestsAdmin usertests = new UsersAndTestsAdmin();
         public MainAdmin()
         {
             InitializeComponent();
@@ -47,12 +49,19 @@ namespace Algorithm.View.admin
 
         private void UserTests_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            MainFrame.Navigate(usertests);
         }
 
         private void Questions_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            MainFrame.Navigate(QuestionsAdmin);
+        }
 
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            FormLoginRegister form = new FormLoginRegister();
+            form.Show();
+            this.Close();
         }
     }
 }

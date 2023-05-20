@@ -18,7 +18,7 @@
                    Margin="25 25 0 0"
                    Style="{DynamicResource Logo}"/>
 
-            <TextBlock Text="Login"
+            <TextBlock Text="Логин"
                        Style="{DynamicResource TextBlockRegister}"/>
 
             <Border Margin="0, 30, 0, 0"
@@ -28,7 +28,7 @@
                              Style="{DynamicResource TextBoxRegister}"
                              TextChanged="LoginForLogin_TextChanged"/>
                     <TextBlock x:Name="LoginForLoginPlug"
-                               Text="Login"
+                               Text="Логин"
                                Style="{DynamicResource TextBlockPlug}"/>
                 </Grid>
             </Border>
@@ -40,7 +40,7 @@
                                 Style="{DynamicResource PasswordBoxRegister}"
                                 PasswordChanged="PasswordForLogin_PasswordChanged" />
                     <TextBlock x:Name="PasswordForLoginPlug"
-                               Text="Password"
+                               Text="Пароль"
                                Style="{DynamicResource TextBlockPlug}"/>
                 </Grid>
             </Border>
@@ -48,7 +48,7 @@
             <Border Margin="0 30 0 0"
                     Style="{DynamicResource Line}"/>
 
-            <Button Content="Login"
+            <Button Content="Войти"
                     Margin="0 30 0 0"
                     Style="{DynamicResource ButtonRegister}"
                     Template="{DynamicResource btTemplate}"

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 using Algorithm.Model;
 using Algorithm.View;
 using Microsoft.Identity.Client;
@@ -51,12 +52,24 @@ namespace Algorithm.ViewModel
             {
                 return _addQuestion ?? new RelayCommand(obj =>
                 {
-                    Profile page = obj as Profile;
-                    if (page != null)
+                    try
                     {
-                        DataWorker.AddQuestion(AppSettings.localUser.ID_USER, page.Question.Text);
-                        page.Question.Text = "";
-                        MessageBox.Show("Ожидайте, вам скоро ответят на почту.", "Вопрос", MessageBoxButton.OK);
+                        Profile page = obj as Profile;
+                        if (page != null)
+                        {
+                            if (string.IsNullOrEmpty(page.Question.Text)) 
+                            {
+                                throw new Exception("Вопрос не может быть пустой!");
+                            }
+
+                            DataWorker.AddQuestion(AppSettings.localUser.ID_USER, page.Question.Text);
+                            page.Question.Text = "";
+                            MessageBox.Show("Ожидайте, вам скоро ответят на почту.", "Вопрос", MessageBoxButton.OK);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка добавления вопроса", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }

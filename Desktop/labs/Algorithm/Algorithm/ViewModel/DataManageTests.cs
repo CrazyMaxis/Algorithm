@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Algorithm.ViewModel
 {
@@ -27,6 +29,11 @@ namespace Algorithm.ViewModel
                     if (page != null)
                     {
                         Algorithm.Model.Test test = page.TestsList.SelectedItem as Algorithm.Model.Test;
+                        if (test.LEVEL > AppSettings.localUser.LEVEL)
+                        {
+                            MessageBox.Show("Ты не достоин!", "Нельзя", MessageBoxButtons.OK);
+                            return;
+                        }
                         if (test != null)
                         {
                             Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome", test.SOURCE);

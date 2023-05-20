@@ -45,7 +45,7 @@ namespace Algorithm.View
                 if (parent is ListViewItem listItem)
                 {
                     course = (Algorithm.Model.Courses)listItem.DataContext;
-                    FormBuy form = new FormBuy(course.ID_COURSE);
+                    FormBuy form = new FormBuy(course.ID_COURSE, course.NAME);
                     if (DataWorker.CheckUserCourses(AppSettings.localUser.ID_USER, course.ID_COURSE))
                     {
                         throw new Exception("У вас уже куплен данный курс!");

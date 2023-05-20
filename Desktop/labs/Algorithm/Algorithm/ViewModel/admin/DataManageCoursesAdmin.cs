@@ -90,15 +90,42 @@ namespace Algorithm.ViewModel.admin
             {
                 return _changeElement ?? new RelayCommand(obj =>
                 {
-                    ChangeCourse form = obj as ChangeCourse;
-                    if (form != null)
+                    try
                     {
-                        Element.NAME = form.ElementName.Text;
-                        Element.PRICE = Convert.ToDouble(form.ElementPrice.Text);
-                        Element.DESCRIPTION = form.ElementDescription.Text;
-                        DataWorker.ChangeCourse(Element);
-                        form.Close();
-                        Refresh();
+                        ChangeCourse form = obj as ChangeCourse;
+                        if (form != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(form.ElementName.Text))
+                            {
+                                throw new Exception("Название не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementPrice.Text))
+                            {
+                                throw new Exception("Цена не может быть пустая!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementImage.Source.ToString()))
+                            {
+                                throw new Exception("Нужно выбрать картинку!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementDescription.Text))
+                            {
+                                throw new Exception("Описание не может быть пустым!");
+                            }
+
+                            Element.NAME = form.ElementName.Text;
+                            Element.PRICE = Convert.ToDouble(form.ElementPrice.Text);
+                            Element.DESCRIPTION = form.ElementDescription.Text;
+                            DataWorker.ChangeCourse(Element);
+                            form.Close();
+                            Refresh();
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка изменения!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }
@@ -127,12 +154,39 @@ namespace Algorithm.ViewModel.admin
             {
                 return _addElement ?? new RelayCommand(obj =>
                 {
-                    AddCourse form = obj as AddCourse;
-                    if (form != null)
+                    try
                     {
-                        DataWorker.AddCourse(new Algorithm.Model.Courses() { NAME = form.ElementName.Text, PRICE = Convert.ToDouble(form.ElementPrice.Text), IMAGE_SOURCE = form.ElementImage.Source.ToString(), DESCRIPTION = form.ElementDescription.Text });
-                        form.Close();
-                        Refresh();
+                        AddCourse form = obj as AddCourse;
+                        if (form != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(form.ElementName.Text))
+                            {
+                                throw new Exception("Название не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementPrice.Text))
+                            {
+                                throw new Exception("Цена не может быть пустая!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementImage.Source.ToString()))
+                            {
+                                throw new Exception("Нужно выбрать картинку!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementDescription.Text))
+                            {
+                                throw new Exception("Описание не может быть пустым!");
+                            }
+
+                            DataWorker.AddCourse(new Algorithm.Model.Courses() { NAME = form.ElementName.Text, PRICE = Convert.ToDouble(form.ElementPrice.Text), IMAGE_SOURCE = form.ElementImage.Source.ToString(), DESCRIPTION = form.ElementDescription.Text });
+                            form.Close();
+                            Refresh();
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка добавления", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }

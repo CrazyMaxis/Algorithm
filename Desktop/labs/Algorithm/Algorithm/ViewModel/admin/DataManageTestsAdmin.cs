@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using Path = System.IO.Path;
 using System.IO;
 using Microsoft.Win32;
+using System.Linq.Expressions;
+using System.Windows;
 
 namespace Algorithm.ViewModel.admin
 {
@@ -87,13 +89,40 @@ namespace Algorithm.ViewModel.admin
             {
                 return _changeTest ?? new RelayCommand(obj =>
                 {
-                    ChangeTest form = obj as ChangeTest;
-                    if (form != null)
+                    try
                     {
-                        Element.NAME = form.ElementName.Text;
-                        DataWorker.ChangeTest(Element);
-                        form.Close();
-                        Refresh();
+                        ChangeTest form = obj as ChangeTest;
+                        if (form != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(form.ElementName.Text))
+                            {
+                                throw new Exception("Название не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementLevel.Text))
+                            {
+                                throw new Exception("Уровень не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementImage.Source.ToString()))
+                            {
+                                throw new Exception("Нужно выбрать картинку!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementSource.Text))
+                            {
+                                throw new Exception("Нужно ссылку на тесту!");
+                            }
+
+                            Element.NAME = form.ElementName.Text;
+                            DataWorker.ChangeTest(Element);
+                            form.Close();
+                            Refresh();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка изменения!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }
@@ -122,12 +151,39 @@ namespace Algorithm.ViewModel.admin
             {
                 return _addTest ?? new RelayCommand(obj =>
                 {
-                    AddTest form = obj as AddTest;
-                    if (form != null)
+                    try
                     {
-                        DataWorker.AddTest(new Algorithm.Model.Test() { NAME = form.ElementName.Text, LEVEL = Convert.ToInt32(form.ElementLevel.Text), IMAGE_SOURCE = form.ElementImage.Source.ToString(), SOURCE = form.ElementSource.Text });
-                        form.Close();
-                        Refresh();
+                        AddTest form = obj as AddTest;
+                        if (form != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(form.ElementName.Text))
+                            {
+                                throw new Exception("Название не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementLevel.Text))
+                            {
+                                throw new Exception("Уровень не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementImage.Source.ToString()))
+                            {
+                                throw new Exception("Нужно выбрать картинку!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementSource.Text))
+                            {
+                                throw new Exception("Нужно ссылку на тесту!");
+                            }
+
+                            DataWorker.AddTest(new Algorithm.Model.Test() { NAME = form.ElementName.Text, LEVEL = Convert.ToInt32(form.ElementLevel.Text), IMAGE_SOURCE = form.ElementImage.Source.ToString(), SOURCE = form.ElementSource.Text });
+                            form.Close();
+                            Refresh();
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка добавление", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }

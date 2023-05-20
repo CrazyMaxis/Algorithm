@@ -61,8 +61,8 @@ namespace Algorithm.ViewModel
                             MessageBox.Show("Покупка совершена успешно!", "Purchace Done", MessageBoxButton.OK);
                             window.Close();
 
-                            var mail = AppSettings.CreateMail("Algorithm Adventure", "algorithmadventure@gmail.com", AppSettings.localUser.EMAIL, "Информация о покупке курсов", "Заскамил");
-                            AppSettings.SendMail("smtp.gmail.com", 587, "algorithmadventure@gmail.com", "mmruuaicgjivgyvq", mail);
+                            var mail = AppSettings.CreateMail("Algorithm Adventure", "algorithmkursach@gmail.com", AppSettings.localUser.EMAIL, "Информация о покупке курсов", "Поздравляем с успешной покупкой курсов '" + window.name + "',  вскоре мы пришлем вам ссылку на закрытые уроки в MS Teams, ожидайте.");
+                            AppSettings.SendMail("smtp.gmail.com", 587, "algorithmkursach@gmail.com", "bjjltjvrhgvxgkak", mail);
                         }
                     }
                     catch (Exception ex)

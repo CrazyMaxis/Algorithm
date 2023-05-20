@@ -17,7 +17,7 @@
                    Margin="25 25 0 0"
                    Style="{DynamicResource Logo}"/>
 
-            <TextBlock Text="Register"
+            <TextBlock Text="Регистрация"
                        Style="{DynamicResource TextBlockRegister}"/>
 
             <Border Margin="0, 30, 0, 0"
@@ -27,7 +27,7 @@
                              Style="{DynamicResource TextBoxRegister}" 
                              TextChanged="LoginForRegister_TextChanged"/>
                     <TextBlock x:Name="LoginForRegisterPlug"
-                               Text="Login"
+                               Text="Логин"
                                Style="{DynamicResource TextBlockPlug}"/>
 
                 </Grid>
@@ -40,7 +40,7 @@
                              Style="{DynamicResource TextBoxRegister}"
                              TextChanged="EmailForRegister_TextChanged"/>
                     <TextBlock x:Name="EmailForRegisterPlug"
-                               Text="Email"
+                               Text="Эл. почта"
                                Style="{DynamicResource TextBlockPlug}"/>
                 </Grid>
             </Border>
@@ -52,7 +52,7 @@
                          Style="{DynamicResource PasswordBoxRegister}"
                          PasswordChanged="PasswordForRegister_PasswordChanged"/>
                     <TextBlock x:Name="PasswordForRegisterPlug"
-                           Text="Password"
+                           Text="Пароль"
                            Style="{DynamicResource TextBlockPlug}"/>
                 </Grid>
             </Border>
@@ -60,7 +60,7 @@
             <Border Margin="0 30 0 0"
                     Style="{DynamicResource Line}"/>
 
-            <Button Content="Register"
+            <Button Content="Зарегистрироваться"
                     Margin="0 30 0 0"
                     Style="{DynamicResource ButtonRegister}"
                     Template="{DynamicResource btTemplate}"

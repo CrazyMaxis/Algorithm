@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\App.xaml
-26-1346438862
+302099482052
 
-45-2101404608
+511494718786
 238-2145037264
-Styles\Catalog.xaml;Styles\Footer.xaml;Styles\Header.xaml;Styles\Home.xaml;Styles\Profile.xaml;Styles\RegisterLoginStyles.xaml;View\admin\AddAlgorithm.xaml;View\admin\AddCourse.xaml;View\admin\AddTest.xaml;View\admin\CatalogAdmin.xaml;View\admin\ChangeAlgorithm.xaml;View\admin\ChangeCourse.xaml;View\admin\ChangeTest.xaml;View\admin\CoursesAdmin.xaml;View\admin\MainAdmin.xaml;View\admin\TestsAdmin.xaml;View\Catalog.xaml;View\Courses.xaml;View\FormBuy.xaml;View\FormLoginRegister.xaml;View\Home.xaml;View\Login.xaml;View\MainUser.xaml;View\Profile.xaml;View\Register.xaml;View\Tests.xaml;
+Styles\Catalog.xaml;Styles\Footer.xaml;Styles\Header.xaml;Styles\Home.xaml;Styles\Profile.xaml;Styles\RegisterLoginStyles.xaml;View\admin\AddAlgorithm.xaml;View\admin\AddCourse.xaml;View\admin\AddTest.xaml;View\admin\AnswerAdmin.xaml;View\admin\CatalogAdmin.xaml;View\admin\ChangeAlgorithm.xaml;View\admin\ChangeCourse.xaml;View\admin\ChangeTest.xaml;View\admin\CoursesAdmin.xaml;View\admin\LvlUpFormAdmin.xaml;View\admin\MainAdmin.xaml;View\admin\QuestionsAdmin.xaml;View\admin\TestsAdmin.xaml;View\admin\UsersAndTestsAdmin.xaml;View\Catalog.xaml;View\Courses.xaml;View\FormBuy.xaml;View\FormLoginRegister.xaml;View\Home.xaml;View\Login.xaml;View\MainUser.xaml;View\Profile.xaml;View\Register.xaml;View\Tests.xaml;
 
 False
 

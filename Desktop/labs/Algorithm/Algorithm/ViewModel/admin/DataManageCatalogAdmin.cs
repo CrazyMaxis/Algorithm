@@ -15,6 +15,7 @@ using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Printing;
 using System.ComponentModel;
+using System.Windows;
 
 namespace Algorithm.ViewModel.admin
 {
@@ -71,7 +72,7 @@ namespace Algorithm.ViewModel.admin
             {
                 return _clickAlgorithmLevel1 ?? new RelayCommand(obj =>
                 {
-                    Catalog page = obj as Catalog;
+                    CatalogAdmin page = obj as CatalogAdmin;
                     if (page != null)
                     {
                         Algorithm.Model.Algorithm algorithm = page.Level1.SelectedItem as Algorithm.Model.Algorithm;
@@ -91,7 +92,7 @@ namespace Algorithm.ViewModel.admin
             {
                 return _clickAlgorithmLevel2 ?? new RelayCommand(obj =>
                 {
-                    Catalog page = obj as Catalog;
+                    CatalogAdmin page = obj as CatalogAdmin;
                     if (page != null)
                     {
                         Algorithm.Model.Algorithm algorithm = page.Level2.SelectedItem as Algorithm.Model.Algorithm;
@@ -160,14 +161,41 @@ namespace Algorithm.ViewModel.admin
             {
                 return _changeElement ?? new RelayCommand(obj =>
                 {
-                    ChangeAlgorithm form = obj as ChangeAlgorithm;
-                    if (form != null)
+                    try
                     {
-                        Element.NAME = form.ElementName.Text;
-                        Element.LEVEL = Convert.ToInt32(form.ElementLevel.Text);
-                        DataWorker.ChangeAlgorithm(Element);
-                        form.Close();
-                        Refresh();
+                        ChangeAlgorithm form = obj as ChangeAlgorithm;
+                        if (form != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(form.ElementName.Text))
+                            {
+                                throw new Exception("Название не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementLevel.Text))
+                            {
+                                throw new Exception("Уровень не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementImage.Source.ToString()))
+                            {
+                                throw new Exception("Нужно выбрать картинку!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementPresentation.Text))
+                            {
+                                throw new Exception("Нужно указать путь к презентации!");
+                            }
+
+                            Element.NAME = form.ElementName.Text;
+                            Element.LEVEL = Convert.ToInt32(form.ElementLevel.Text);
+                            DataWorker.ChangeAlgorithm(Element);
+                            form.Close();
+                            Refresh();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка изменения", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }
@@ -196,12 +224,39 @@ namespace Algorithm.ViewModel.admin
             {
                 return _addElement ?? new RelayCommand(obj =>
                 {
-                    AddAlgorithm form = obj as AddAlgorithm;
-                    if (form != null)
+                    try
                     {
-                        DataWorker.AddAlgorithm(new Algorithm.Model.Algorithm() { NAME = form.ElementName.Text, LEVEL = Convert.ToInt32(form.ElementLevel.Text), IMAGE_SOURCE = form.ElementImage.Source.ToString(), PATH_TO_PRESENTATION = form.ElementPresentation.Text});
-                        form.Close();
-                        Refresh();
+                        AddAlgorithm form = obj as AddAlgorithm;
+                        if (form != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(form.ElementName.Text))
+                            {
+                                throw new Exception("Название не может быть пустым!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementLevel.Text))
+                            {
+                                throw new Exception("Уровень не может быть пустым!");
+                            }
+
+                            if (form.ElementImage.Source == null)
+                            {
+                                throw new Exception("Нужно выбрать картинку!");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(form.ElementPresentation.Text))
+                            {
+                                throw new Exception("Нужно указать путь к презентации!");
+                            }
+
+                            DataWorker.AddAlgorithm(new Algorithm.Model.Algorithm() { NAME = form.ElementName.Text, LEVEL = Convert.ToInt32(form.ElementLevel.Text), IMAGE_SOURCE = form.ElementImage.Source.ToString(), PATH_TO_PRESENTATION = form.ElementPresentation.Text });
+                            form.Close();
+                            Refresh();
+                        }
+                    }
+                    catch(Exception ex) 
+                    { 
+                        MessageBox.Show(ex.Message, "Ошибка добавления", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 });
             }

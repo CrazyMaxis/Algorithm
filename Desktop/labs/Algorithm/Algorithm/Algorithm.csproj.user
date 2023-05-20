@@ -16,6 +16,9 @@
     <Compile Update="View\admin\AddTest.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\admin\AnswerAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\admin\CatalogAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,10 +34,19 @@
     <Compile Update="View\admin\CoursesAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\admin\LvlUpFormAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\admin\MainAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\admin\QuestionsAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\admin\TestsAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\admin\UsersAndTestsAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Catalog.xaml.cs">
@@ -93,6 +105,9 @@
     <Page Update="View\admin\AddTest.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\admin\AnswerAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\admin\CatalogAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -108,10 +123,19 @@
     <Page Update="View\admin\CoursesAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\admin\LvlUpFormAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\admin\MainAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\admin\QuestionsAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\admin\TestsAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\admin\UsersAndTestsAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Catalog.xaml">

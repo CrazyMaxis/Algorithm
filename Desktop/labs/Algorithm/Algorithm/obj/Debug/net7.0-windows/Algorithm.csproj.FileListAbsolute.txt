@@ -108,3 +108,11 @@ C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\adm
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\AddCourse.baml
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\ChangeCourse.baml
 C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\CoursesAdmin.baml
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\QuestionsAdmin.g.cs
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\QuestionsAdmin.baml
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\AnswerAdmin.g.cs
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\AnswerAdmin.baml
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\LvlUpFormAdmin.g.cs
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\UsersAndTestsAdmin.g.cs
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\LvlUpFormAdmin.baml
+C:\Users\USER\Desktop\labs\Algorithm\Algorithm\obj\Debug\net7.0-windows\View\admin\UsersAndTestsAdmin.baml

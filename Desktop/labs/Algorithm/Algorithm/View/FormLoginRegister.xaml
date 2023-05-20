@@ -16,7 +16,7 @@
                NavigationUIVisibility="Hidden"/>
 
         <TextBlock x:Name="LoginIn"
-                   Text="REGISTER"
+                   Text="ЗАРЕГИСТРИРОВАТЬСЯ"
                    Margin="0 330 0 0"
                    Style="{DynamicResource TextBlockLoginIn}" 
                    MouseDown="LoginIn_MouseDown"/>

@@ -21,10 +21,12 @@ namespace Algorithm.View
     public partial class FormBuy : Window
     {
         public int course_id;
-        public FormBuy(int course_id)
+        public string name;
+        public FormBuy(int course_id, string name)
         {
             InitializeComponent();
             this.course_id = course_id;
+            this.name = name;
             this.DataContext = new DataManageCourses();
         }
 
