@@ -115,6 +115,7 @@ namespace Algorithm.ViewModel.admin
                             }
 
                             Element.NAME = form.ElementName.Text;
+                            Element.SOURCE = form.ElementSource.Text;
                             DataWorker.ChangeTest(Element);
                             form.Close();
                             Refresh();

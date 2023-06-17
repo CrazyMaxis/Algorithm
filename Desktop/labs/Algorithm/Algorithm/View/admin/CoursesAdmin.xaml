@@ -22,7 +22,7 @@
                    Margin="80 20 0 0"
                    Style="{DynamicResource CatalogHeaders}"/>
 
-        <Button Content="Добавить тест"
+        <Button Content="Добавить курс"
                 Grid.Row="0"
                     Width="250"
                     Height="60"

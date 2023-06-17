@@ -18,7 +18,7 @@
                    Margin="25 25 0 0"
                    Style="{DynamicResource Logo}"/>
 
-            <TextBlock Text="Логин"
+            <TextBlock Text="Авторизация"
                        Style="{DynamicResource TextBlockRegister}"/>
 
             <Border Margin="0, 30, 0, 0"
